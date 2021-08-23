@@ -92,7 +92,7 @@ body {
             }
 
             #first-arrow::after {
-              content: url(../images/main-menu/arrows.png);
+              content: none;
               margin: 7px -28px 0 20px;
             }
 
@@ -102,7 +102,7 @@ body {
                 color: white;
 
                 #first-arrow::after {
-                  content: none;
+                  content: url(../images/main-menu/arrows.png);
                 }
               }
             }
