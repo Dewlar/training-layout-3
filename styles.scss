@@ -1,5 +1,7 @@
+@use "sass:math";
 @import "reset";
 @import url(https://allfont.ru/allfont.css?fonts=franklin-gothic-demi-cond);
+
 * {
   margin: 0;
   padding: 0;
@@ -12,21 +14,21 @@
 }
 
 body {
-  background: url(images/background-lines.png);
+  background: url(../images/background-lines.png);
 
   .wrapper {
     display: flex;
     flex-direction: column;
     width: 1018px;
     min-height: 100vh;
-    background: url(images/background.png);
+    background: url(../images/background.png);
 
     .head {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-      background-image: url(images/head/background.png);
+      background-image: url(../images/head/background.png);
       background-repeat: no-repeat;
       height: 155px;
       width: 977px;
@@ -72,7 +74,7 @@ body {
         padding: 30px 33px 0 17px;
 
         .main-menu {
-          background-image: url(images/main-menu/background.png);
+          background-image: url(../images/main-menu/background.png);
           background-repeat: no-repeat;
           border-radius: 5px;
           border: 1px #c0ccd0 solid;
@@ -89,7 +91,7 @@ body {
             }
 
             #first-arrow::after {
-              content: url(images/main-menu/arrows.png);
+              content: url(../images/main-menu/arrows.png);
               margin: 7px -28px 0 20px;
             }
 
@@ -111,7 +113,7 @@ body {
           border-radius: 5px;
           border: 1px #c0ccd0 solid;
           padding: 22px 38px 28px 0;
-          margin-top: min($numbers: 30px);
+          margin-top: min(30px);
           text-align: right;
           @include site-fonts(11px, normal);
 
@@ -145,8 +147,8 @@ body {
           border-radius: 5px;
           border: 1px #c0ccd0 solid;
           padding: 0px 38px 22px 0;
-          margin-top: min($numbers: 30px);
-          margin-bottom: min($numbers: 30px);
+          margin-top: min(30px);
+          margin-bottom: min(30px);
           text-align: right;
           @include site-fonts(11px, normal);
 
@@ -215,7 +217,7 @@ body {
           color: #d51a2b;
 
           &::before {
-            content: url(images/function-part/arrows.png);
+            content: url(../images/function-part/arrows.png);
             margin-right: 7px;
           }
 
@@ -240,7 +242,7 @@ body {
           background-color: #e9eef1;
           border-radius: 5px;
           border: 1px #c0ccd0 solid;
-          padding: 16px 0 16px ((260px-4px-42px-172px)/2);
+          padding: 16px 0 16px math.div((260px-4px-42px-172px),2);
           //width(.right) - img-size - left-padding(.right) - right-padding(.right)
         }
 
@@ -287,7 +289,7 @@ body {
             margin-bottom: 20px;
 
             &::after {
-              content: url(images/news/separator-lines.png);
+              content: url(../images/news/separator-lines.png);
               margin: 0 0 0 (-16px-4px-1px-1px);
               // left-padding(.right) + left-padding(%right-colomn-size) + border(1px)*2
             }
@@ -303,7 +305,7 @@ body {
     .footer {
       display: flex;
       justify-content: space-between;
-      background-image: url(images/footer/background.png);
+      background-image: url(../images/footer/background.png);
       background-repeat: no-repeat;
       height: 100px;
       margin-top: auto;
