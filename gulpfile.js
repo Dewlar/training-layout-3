@@ -27,6 +27,8 @@ let { src, dest } = require("gulp"),
   gulp = require("gulp"),
   browsersync = require("browser-sync").create(),
   del = require("del"),
+  clean_css = require("gulp-clean-css"),
+  rename = require("gulp-rename"),
   scss = require("gulp-sass")(require("sass"));
 
 function browserSync(params) {
@@ -58,7 +60,13 @@ function css(params) {
         outputStyle: "expanded",
       })
     )
-
+    .pipe(dest(path.build.css))
+    .pipe(clean_css())
+    .pipe(
+      rename({
+        extname: ".min.css",
+      })
+    )
     .pipe(dest(path.build.css))
     .pipe(browsersync.stream());
 }
