@@ -14,7 +14,7 @@
   font-weight: $wg;
 }
 
-$highlight-color-for-headings-and-links: #d51a2b;
+$highlight-color: #d51a2b;
 $footer-text-color: #76868b;
 $useful-webs-text-color: #3b5e79;
 $main-menu-text-color: white;
@@ -58,12 +58,12 @@ body {
         font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
         font-size: 21px;
         color: white;
-        margin: 0 0 0 (210px-20px);
+        margin: 0 0 0 190px;
       }
 
       .right {
         @include site-fonts(11px, bold);
-        color: $highlight-color-for-headings-and-links;
+        color: $highlight-color;
         margin: auto 10px 0 0;
       }
     }
@@ -80,7 +80,7 @@ body {
         padding: 30px 33px 0 17px;
 
         .main-menu {
-          background-image: url(../images/main-menu/background.png);
+          background-image: url(../images/main-menu/Menu_Background.png);
           background-repeat: no-repeat;
           border-radius: 5px;
           border: 1px #c0ccd0 solid;
@@ -96,18 +96,22 @@ body {
               color: $main-menu-text-color;
             }
 
-            .first-arrow::after {
-              content: none;
-              margin: 7px -28px 0 20px;
-            }
-
             li {
               &:hover {
-                text-decoration: underline;
                 color: $main-menu-text-color;
+                height: 18px;
 
-                .first-arrow::after {
-                  content: url(../images/main-menu/arrows.png);
+                &::after {
+                  content: url(../images/main-menu/arrows_red.jpg);
+                  position: relative;
+                  top: 1px;
+                  right: -26px;
+                }
+
+                a {
+                  margin-right: -15px;
+                  text-decoration: underline;
+                  vertical-align: top;
                 }
               }
             }
@@ -125,7 +129,7 @@ body {
 
           p {
             @include site-fonts(14px, normal);
-            color: $highlight-color-for-headings-and-links;
+            color: $highlight-color;
           }
 
           ul {
@@ -160,7 +164,7 @@ body {
 
           h3 {
             @include site-fonts(14px, bold);
-            color: $highlight-color-for-headings-and-links;
+            color: $highlight-color;
             margin-top: 22px;
           }
 
@@ -204,13 +208,13 @@ body {
 
         h2 {
           @include site-fonts(14px, bold);
-          color: $highlight-color-for-headings-and-links;
+          color: $highlight-color;
           margin-bottom: 8px;
         }
 
         h3 {
           @include site-fonts(11px, bold);
-          color: $highlight-color-for-headings-and-links;
+          color: $highlight-color;
           margin: 10px 0 10px 0;
         }
 
@@ -220,19 +224,21 @@ body {
 
         a {
           @include site-fonts(13px, normal);
-          color: $highlight-color-for-headings-and-links;
+          color: $highlight-color;
+          margin-left: 15px;
+          text-decoration: none;
 
           &::before {
-            content: url(../images/function-part/arrows.png);
+            content: none;
             margin-right: 7px;
           }
 
           &:hover {
-            text-decoration: none;
-            margin-left: 15px;
+            text-decoration: underline;
+            margin-left: 0;
 
             &::before {
-              content: none;
+              content: url(../images/function-part/arrows.png);
             }
           }
         }
@@ -248,8 +254,7 @@ body {
           background-color: #e9eef1;
           border-radius: 5px;
           border: 1px #c0ccd0 solid;
-          padding: 16px 0 16px math.div((260px-4px-42px-172px), 2);
-          //width(.right) - img-size - left-padding(.right) - right-padding(.right)
+          padding: 16px 0 16px math.div((260px-4px-42px-172px), 2); //img width = 172px
         }
 
         .banners {
@@ -265,7 +270,7 @@ body {
             }
 
             a {
-              color: $highlight-color-for-headings-and-links;
+              color: $highlight-color;
 
               &:hover {
                 text-decoration: none;
@@ -297,7 +302,6 @@ body {
             &::after {
               content: url(../images/news/separator-lines.png);
               margin: 0 0 0 (-16px-4px-1px-1px);
-              // left-padding(.right) + left-padding(%right-colomn-size) + border(1px)*2
             }
           }
 
